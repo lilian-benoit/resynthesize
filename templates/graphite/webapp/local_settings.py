@@ -62,7 +62,7 @@ DEFAULT_CACHE_DURATION = 10
 #MEMCACHE_KEY_PREFIX = 'graphite'
 
 # Set URL_PREFIX when deploying graphite-web to a non-root location
-#URL_PREFIX = '/graphite'
+URL_PREFIX = '/graphite'
 
 #####################################
 # Filesystem Paths #

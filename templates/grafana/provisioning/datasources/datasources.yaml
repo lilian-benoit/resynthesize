@@ -13,7 +13,7 @@ datasources:
     # <int> org id. will default to orgId 1 if not specified
     orgId: 1
     # <string> url
-    url: https://127.0.0.1:443
+    url: https://127.0.0.1:443/graphite
     # default datasource
     isDefault: true
     # basic auth
