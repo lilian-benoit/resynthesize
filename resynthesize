@@ -347,7 +347,7 @@ function upgrade() {
 	cp -b ${SYNTHESIZE_HOME}/templates/graphite/conf/* ${GRAPHITE_CONF}/
 	if [ -f /etc/collectd.conf ]; then mv /etc/collectd.conf /etc/collectd.conf-backup; fi
 	cp ${SYNTHESIZE_HOME}/templates/collectd/collectd.conf /etc/
-	cp -b ${SYNTHESIZE_HOME}/templates/apache/graphite.conf /etc/apache2/sites-available/
+	cp ${SYNTHESIZE_HOME}/templates/httpd/graphite.conf /etc/httpd/conf.d/
 
 	# Install configuration files for Django
 	cd ${GRAPHITE_HOME}/webapp/graphite
