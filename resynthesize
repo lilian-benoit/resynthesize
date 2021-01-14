@@ -371,6 +371,7 @@ function upgrade() {
 	/usr/local/bin/carbon-cache restart
 	service memcached restart
 	service httpd restart
+	systemctl restart grafana-server 1>> ${SYNTHESIZE_LOG} 2>&1
 }
 
 BeautifulBanner
