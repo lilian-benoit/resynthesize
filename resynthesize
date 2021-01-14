@@ -363,6 +363,10 @@ function upgrade() {
 	PYTHONPATH=${GRAPHITE_HOME}/webapp django-admin.py migrate --noinput --settings=graphite.settings --run-syncdb
 	PYTHONPATH=${GRAPHITE_HOME}/webapp django-admin.py loaddata --settings=graphite.settings dump_${BACKUP}_data.json
 
+    # Update grafana templates
+    cp ${SYNTHESIZE_HOME}/templates/grafana/provisioning/datasources/* /etc/grafana/provisioning/datasources/
+	cp ${SYNTHESIZE_HOME}/templates/grafana/provisioning/dashboards/* /etc/grafana/provisioning/dashboards/
+	
 	# Restart our processes
 	/usr/local/bin/carbon-cache restart
 	service memcached restart
