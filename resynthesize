@@ -345,7 +345,8 @@ function upgrade() {
 	# Install configuration files for Graphite/Carbon and Apache
 	cp -b ${GRAPHITE_CONF}/*.example ${GRAPHITE_CONF}/examples/
 	cp -b ${SYNTHESIZE_HOME}/templates/graphite/conf/* ${GRAPHITE_CONF}/
-	cp -b ${SYNTHESIZE_HOME}/templates/collectd/collectd.conf /etc/collectd/
+	if [ -f /etc/collectd.conf ]; then mv /etc/collectd.conf /etc/collectd.conf-backup; fi
+	cp ${SYNTHESIZE_HOME}/templates/collectd/collectd.conf /etc/
 	cp -b ${SYNTHESIZE_HOME}/templates/apache/graphite.conf /etc/apache2/sites-available/
 
 	# Install configuration files for Django
