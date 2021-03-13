@@ -270,6 +270,9 @@ function install() {
 
 # Function to uninstall the services
 function uninstall() {
+        rm -rf /opt/graphite
+        rm -rf /usr/local/usr
+
 	/usr/local/bin/carbon-cache stop
 	/usr/local/bin/carbon-cache disable
 	systemctl disable --now memcached
